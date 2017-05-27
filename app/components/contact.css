@@ -1,0 +1,33 @@
+.contacts{
+  position: absolute;
+  bottom: 5vmin;
+  right: 5vmin;
+  display: block;
+}
+.contacts ul{
+  list-style: none;
+}
+.contacts ul li {
+  display: inline-block;
+}
+.contacts ul li a{
+  position: relative;
+  display: block;
+  margin: 0 0.75vmax;
+}
+.contacts ul li a svg{
+  width: 2vmax;
+  height: 2vmax;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+.contacts ul li a svg:hover{
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+}
+.contacts ul li a svg path{
+  fill: #37383A;
+}
+.contacts ul li a svg circle{
+  fill: #37383A;
+}

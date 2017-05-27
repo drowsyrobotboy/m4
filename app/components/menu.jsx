@@ -38,7 +38,8 @@ class Menu extends React.Component {
           <ul>
             {
               this.props.items.map(function(item) {
-                return (<li key={item.id}><a href={item.url}>{item.text}</a></li>)})
+                return (<li key={item.id}><a href={item.url}>{item.text}</a></li>)
+              })
             }
           </ul>
         </div>
