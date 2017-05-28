@@ -25,9 +25,3 @@
   -webkit-transform: scale(1.4);
   transform: scale(1.4);
 }
-.contacts ul li a svg path{
-  fill: #37383A;
-}
-.contacts ul li a svg circle{
-  fill: #37383A;
-}
