@@ -34,6 +34,9 @@
 }
 /*== Mobile css == all sizes in px ==*/
 @media screen and (max-width: 900px), screen and (max-device-width: 900px) {
+  .contacts{
+    bottom: 15vmin;
+  }
   .contacts ul li a{
     margin: 0 15px;
   }

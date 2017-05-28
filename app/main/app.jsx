@@ -71,7 +71,7 @@ class Main extends React.Component {
           this.setState(launchColor);
         }
       }
-    }, 500);
+    }, 300);
   };
   aboutTop(props){
     console.log("entered aboutTop", props);
