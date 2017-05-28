@@ -1,7 +1,7 @@
 .contacts{
-  position: fixed;
-  bottom: 11vmin;
-  right: 11vmin;
+  position: absolute;
+  bottom: 5vmin;
+  right: 5vmin;
   display: block;
 }
 .contacts ul{
@@ -28,6 +28,17 @@
 .contacts ul li a svg path,
 .contacts ul li a svg circle,
 .contacts ul li a svg rect{
+  fill: rgb(55, 56, 58);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+/*== Mobile css == all sizes in px ==*/
+@media screen and (max-width: 900px), screen and (max-device-width: 900px) {
+  .contacts ul li a{
+    margin: 0 15px;
+  }
+  .contacts ul li a svg{
+    width: 32px;
+    height: 32px;
+  }
 }

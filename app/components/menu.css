@@ -31,17 +31,19 @@
   position: relative;
   display: inline-block;
   font-weight: 400;
-  padding: 1vmax 2vmax;
+  padding: 2vmax 2vmax;
   color: #F3F3F3;
   transition: 0.5s;
   -webkit-transition:0.5s;
   overflow: hidden;
   z-index: -1;
   font-size: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(243, 243, 243, 0.2);
 }
 .nav.open ul li a{
   z-index: 99;
-  font-size: 2vmax;
+  font-size: 1.5vmax;
 }
 .nav ul li a::before {
   transform: translateX(100%);
@@ -170,7 +172,7 @@
   top: 0.6vmax;
 }
 
-/*== Mobile css ==*/
+/*== Mobile css == all sizes in px ==*/
 @media screen and (max-width: 900px), screen and (max-device-width: 900px) {
   .nav{
     left: 0;
@@ -180,19 +182,54 @@
   .nav.open{
     height: 100%;
   }
+  .nav ul li a{
+    padding: 20px;
+  }
+  .nav.open ul li a{
+    font-size: 24px;
+  }
   .burger{
-    width: 5vmax;
+    width: 24px;
     right: 5vmin;
     top: 5vmin;
   }
   .burger span {
-    height: 1vmax;
+    height: 4px;
   }
   .burger span:nth-child(3), .burger span:nth-child(4) {
-    top: 2vmax;
+    top: 8px;
   }
 
   .burger span:nth-child(5), .burger span:nth-child(6) {
-    top: 4vmax;
+    top: 16px;
+  }
+  .burger.open span:nth-child(1) {
+    left: 2px;
+    top: 0;
+  }
+
+  .burger.open span:nth-child(2) {
+    right: 2px;
+    top: 0;
+  }
+
+  .burger.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  .burger.open span:nth-child(4) {
+    right: -50%;
+    opacity: 0;
+  }
+
+  .burger.open span:nth-child(5) {
+    left: 2px;
+    top: 8px;
+  }
+
+  .burger.open span:nth-child(6) {
+    right: 2px;
+    top: 8px;
   }
 }

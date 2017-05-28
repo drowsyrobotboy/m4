@@ -32,7 +32,15 @@ class Menu extends React.Component {
       });
     }
   };
+  hideMenu(){
+    this.toggleBurger();
+  }
   render(){
+    const menuItems = this.props.items.map((item)=>
+        <li key={item.id}>
+          <a href={item.url} onClick={this.hideMenu.bind(this)}>{item.text}</a>
+        </li>
+    );
     return(
       <div className="menu">
         <div className={this.state.open? 'burger open': 'burger'} onClick={this.toggleBurger}>
@@ -44,17 +52,7 @@ class Menu extends React.Component {
           <span style={this.state.burgerStyle}></span>
         </div>
         <div className={this.state.open? 'nav open': 'nav'} style={this.props.styleDefs.menuBgStyle}>
-          <ul>
-            {
-              this.props.items.map(function(item) {
-                return (
-                  <li key={item.id}>
-                    <a href={item.url}>{item.text}</a>
-                  </li>
-                )
-              })
-            }
-          </ul>
+          <ul>{menuItems}</ul>
         </div>
       </div>
     );

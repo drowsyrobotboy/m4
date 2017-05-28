@@ -27,6 +27,7 @@ a{
 .slide{
   width: 100%;
   min-height: 100%;
+  padding-right: 20px;
 }
 .launch-div{
   height: 100%; /* for ff */
