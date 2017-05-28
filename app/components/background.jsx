@@ -10,8 +10,10 @@ class Background extends React.Component {
   render(){
     return(
       <div className="wrapper" style={this.props.wrapperStyle}>
-        <div className="content" style={this.props.contentStyle}>
-          {this.props.children}
+       <div className="inner-wrapper">
+          <div className="content" style={this.props.contentStyle}>
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

@@ -24,10 +24,13 @@ a{
   text-decoration: none;
   outline: 0;
 }
-.launch-div{
-  display: table;
+.slide{
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+}
+.launch-div{
+  height: 100%; /* for ff */
+  display: table;
   color: #37383A;
   border-collapse:collapse;
 }
@@ -65,4 +68,15 @@ a{
   background: #37383A;
   color: #F3F3F3;
   padding: 0.5vmax 1vmax;
+}
+.about-div{
+  background: #ceb640;
+  background: -webkit-linear-gradient(bottom left, #ceb640 0%, #76aeae 100%);
+  background: -o-linear-gradient(bottom left, #ceb640 0%, #76aeae 100%);
+  background: linear-gradient(to top right, #ceb640 0%, #76aeae 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ceb640', endColorstr='#76aeae',GradientType=1 );
+}
+.works-div{
+  background: #37383A;
+  color: #F3F3F3;
 }

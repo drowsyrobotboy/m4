@@ -1,7 +1,7 @@
 .contacts{
-  position: absolute;
-  bottom: 5vmin;
-  right: 5vmin;
+  position: fixed;
+  bottom: 11vmin;
+  right: 11vmin;
   display: block;
 }
 .contacts ul{
@@ -24,4 +24,10 @@
 .contacts ul li a svg:hover{
   -webkit-transform: scale(1.4);
   transform: scale(1.4);
+}
+.contacts ul li a svg path,
+.contacts ul li a svg circle,
+.contacts ul li a svg rect{
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }

@@ -1,35 +1,120 @@
 import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Waypoint from 'react-waypoint';
 import styles from './main.css'
 import Background from '../components/background.jsx'
 import Menu from '../components/menu.jsx'
 import Contact from '../components/contact.jsx'
+
+const worksColor = {
+  currentPage: 'works',
+  wrapperStyle: {background: '#AE3445'},
+  menuStyles: {
+    burgerDefStyle: {background: '#AE3445'},
+    burgerOpenStyle: {background: '#F3F3F3'},
+    menuBgStyle: {background: 'rgba(0,0,0,.95)'}
+  },
+  contactStyle: {fill: '#AE3445'}
+};
+
+const aboutColor = {
+  currentPage: 'about',
+  wrapperStyle: {background: '#F3F3F3'},
+  menuStyles: {
+    burgerDefStyle: {background: '#F3F3F3'},
+    burgerOpenStyle: {background: '#F3F3F3'},
+    menuBgStyle: {background: 'rgba(0,0,0,.95)'}
+  },
+  contactStyle: {fill: '#F3F3F3'}
+};
+
+const launchColor = {
+  currentPage: 'launch',
+  wrapperStyle: {background: '#37383A'},
+  menuStyles: {
+    burgerDefStyle: {background: '#37383A'},
+    burgerOpenStyle: {background: '#F3F3F3'},
+    menuBgStyle: {background: 'rgba(0,0,0,.95)'}
+  },
+  contactStyle: {fill: '#37383A'}
+};
 
 // main bg + wrapper container
 class Main extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      currentPage: 'launch',
       wrapperStyle: {background: '#37383A'},
       contentStyle: {backgroundColor: '#F3F3F3'},
       menuStyles: {
         burgerDefStyle: {background: '#37383A'},
         burgerOpenStyle: {background: '#F3F3F3'},
-        menuBgStyle: {background: 'rgba(0,0,0,.95)'},
+        menuBgStyle: {background: 'rgba(0,0,0,0.95)' },
       },
       contactStyle: {fill: '#37383A'}
     };
-    this.toggleBg = this.toggleBg.bind(this); // binds the function to the component on initiation
+    this.launchTop = this.launchTop.bind(this); // binds the function to the component on initiation
+    this.launchBottom = this.launchBottom.bind(this); // binds the function to the component on initiation
+    this.aboutTop = this.aboutTop.bind(this); // binds the function to the component on initiation
+    this.aboutBottom = this.aboutBottom.bind(this); // binds the function to the component on initiation
+    this.worksTop = this.worksTop.bind(this); // binds the function to the component on initiation
   };
-  toggleBg(){
-    (this.state.wrapperStyle.background=='#37383A')? this.setState({wrapperStyle: {background: '#F3F3F3'}}) : this.setState({wrapperStyle: {background: '#37383A'}})
+  launchTop(props){
+    console.log("entered launchTop", props);
+    if(props.currentPosition=="inside"){
+      if(this.state.currentPage!='launch'){
+        this.setState(launchColor);
+      }
+    }
+  };
+  aboutTop(props){
+    console.log("entered aboutTop", props);
+    if(props.currentPosition=="below"){
+      if(this.state.currentPage!='launch'){
+        this.setState(launchColor);
+      }
+    }
+  };
+  launchBottom(props){
+    console.log("entered lauchBottom", props);
+    if(props.currentPosition=="above"){
+      if(this.state.currentPage!='about'){
+        this.setState(aboutColor);
+      }
+    }
+  };
+  aboutBottom(props){
+    console.log("entered aboutBottom", props);
+    if(props.currentPosition=="above"){
+      if(this.state.currentPage!='works'){
+        this.setState(worksColor);
+      }
+    }
+    else if(props.currentPosition=="below"){
+      if(this.state.currentPage!='about'){
+        this.setState(aboutColor);
+      }
+    }
+  };
+  worksTop(props){
+    console.log("entered worksTop", props);
+    if(props.currentPosition=="below"){
+      if(this.state.currentPage!='about'){
+        this.setState(aboutColor);
+      }
+    }
   };
   render(){
+    //decide styles for this render
+    console.log("render!");
+    //global variables
+    //array for nav items
     const navItems = [
-      {id: 0, text: "Home", url: "#"},
-      {id: 1, text: "About Me", url: "#"},
-      {id: 2, text: "My Works", url: "#"}
+      {id: 0, text: "Home", url: "#home"},
+      {id: 1, text: "About Me", url: "#about"},
+      {id: 2, text: "My Works", url: "#works"}
     ];
     const contItems = [
       {
@@ -53,38 +138,66 @@ class Main extends React.Component {
       {
         id: 3,
         title: 'Behance',
-        svg: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 28.299998"><defs id="defs30" /><path style={this.state.contactStyle} d="m 13.1,-3.8146973e-7 c 1.3,0 2.5,0.10000000146973 3.6,0.40000000146973 1.1,0.2 2,0.6 2.8,1.09999998 0.8,0.5 1.4,1.2 1.8,2.1 0.4,0.9 0.6,2 0.6,3.2 0,1.4 -0.3,2.6 -1,3.5000004 -0.6,0.9 -1.6,1.7 -2.8,2.3 1.7,0.5 3,1.4 3.8,2.6 0.8,1.2 1.3,2.7 1.3,4.4 0,1.4 -0.3,2.6 -0.8,3.6 -0.5,1 -1.3,1.9 -2.2,2.5 -0.9,0.6 -2,1.1 -3.2,1.4 -1.2,0.3 -2.4,0.5 -3.6,0.5 L 0,27.6 0,-3.8146973e-7 l 13.1,0 z M 12.3,11.2 c 1.1,0 2,-0.3 2.7,-0.8 0.7,-0.5000004 1,-1.4000004 1,-2.5000004 0,-0.6 -0.1,-1.2 -0.3,-1.6 -0.2,-0.4 -0.5,-0.7 -0.9,-1 -0.4,-0.2 -0.8,-0.4 -1.3,-0.5 -0.5,-0.1 -1,-0.1 -1.6,-0.1 l -5.8,0 0,6.5000004 6.2,0 z M 12.6,23 c 0.6,0 1.2,-0.1 1.7,-0.2 0.5,-0.1 1,-0.3 1.4,-0.6 0.4,-0.3 0.7,-0.6 1,-1.1 0.2,-0.5 0.4,-1.1 0.4,-1.8 0,-1.4 -0.4,-2.4 -1.2,-3.1 -0.8,-0.6 -1.9,-0.9 -3.2,-0.9 l -6.6,0 0,7.7 6.5,0 z" /><path style={this.state.contactStyle} d="m 31.9,22.9 c 0.8,0.8 2,1.2 3.6,1.2 1.1,0 2.1,-0.3 2.9,-0.8 0.8,-0.6 1.3,-1.2 1.5,-1.8 l 4.9,0 c -0.8,2.4 -2,4.1 -3.6,5.2 -1.6,1 -3.5,1.6 -5.8,1.6 -1.6,0 -3,-0.3 -4.3,-0.8 -1.3,-0.5 -2.3,-1.2 -3.2,-2.2 -0.9,-0.9 -1.6,-2 -2,-3.3 -0.5,-1.3 -0.7,-2.7 -0.7,-4.3 0,-1.5 0.2,-2.9 0.7,-4.2 0.5,-1.3 1.2,-2.4 2.1,-3.4 0.9,-0.9000004 2,-1.7000004 3.2,-2.2000004 1.3,-0.5 2.6,-0.8 4.2,-0.8 1.7,0 3.2,0.3 4.5,1 1.3,0.7 2.3,1.5 3.1,2.7000004 0.8,1.1 1.4,2.4 1.8,3.8 0.2,1.4 0.3,2.8 0.2,4.4 l -14.5,0 c 0,1.6 0.6,3.1 1.4,3.9 z m 6.3,-10.5 c -0.7,-0.7 -1.8,-1.1 -3.1,-1.1 -0.9,0 -1.6,0.2 -2.2,0.5 -0.6,0.3 -1,0.7 -1.4,1.1 -0.4,0.4 -0.6,0.9 -0.7,1.4 -0.1,0.5 -0.2,0.9 -0.2,1.3 l 9,0 c -0.2,-1.5 -0.7,-2.5 -1.4,-3.2 z" /><path style={this.state.contactStyle} d="M 52.8,-3.8146973e-7 52.8,10.4 l 0.1,0 c 0.7,-1.2000004 1.6,-2.0000004 2.7,-2.5000004 1.1,-0.5 2.1,-0.8 3.2,-0.8 1.5,0 2.7,0.2 3.6,0.6 0.9,0.4 1.7,1 2.2,1.7 C 65.1,10.1 65.5,11 65.7,12 c 0.2,1 0.3,2.1 0.3,3.4 l 0,12.3 -5.5,0 0,-11.3 c 0,-1.7 -0.3,-2.9 -0.8,-3.7 -0.5,-0.8 -1.4,-1.2 -2.7,-1.2 -1.5,0 -2.6,0.5 -3.2,1.3 -0.7,0.9 -1,2.4 -1,4.4 l 0,10.5 -5.5,0 0,-27.70000038146972 5.5,0 z" /><path style={this.state.contactStyle} d="m 70,10.6 c 0.6,-0.9000004 1.3,-1.5000004 2.2,-2.1000004 0.9,-0.5 1.9,-0.9 3,-1.1 1.1,-0.2 2.2,-0.3 3.3,-0.3 1,0 2,0.1 3.1,0.2 1,0.1 2,0.4 2.8,0.8 0.9,0.4 1.5,1 2.1,1.7 C 87,10.5 87.3,11.5 87.3,12.7 l 0,10.5 c 0,0.9 0.1,1.8 0.2,2.6 0.1,0.8 0.4,1.5 0.7,1.9 l -5.6,0 c -0.2,-0.2 -0.3,-0.6 -0.4,-0.9 -0.1,-0.3 -0.1,-0.7 -0.1,-1 -0.9,0.9 -1.9,1.5 -3.1,1.9 -1.2,0.4 -2.4,0.5 -3.6,0.5 -1,0 -1.8,-0.1 -2.7,-0.4 -0.8,-0.2 -1.5,-0.6 -2.2,-1.1 -0.6,-0.5 -1.1,-1.1 -1.5,-1.9 -0.3,-0.8 -0.5,-1.6 -0.5,-2.7 0,-1.1 0.2,-2.1 0.6,-2.8 0.4,-0.7 0.9,-1.3 1.5,-1.8 0.6,-0.4 1.4,-0.8 2.2,-1 0.8,-0.2 1.6,-0.4 2.5,-0.5 0.8,-0.1 1.6,-0.2 2.4,-0.3 0.8,-0.1 1.5,-0.2 2.1,-0.3 0.6,-0.2 1.1,-0.4 1.5,-0.7 0.4,-0.3 0.5,-0.7 0.5,-1.3 0,-0.6 -0.1,-1.1 -0.3,-1.4 C 81.3,11.7 81,11.4 80.7,11.2 80.4,11 80,10.9 79.6,10.8 c -0.4,-0.1 -0.9,-0.1 -1.4,-0.1 -1.1,0 -1.9,0.2 -2.5,0.7 -0.6,0.5 -1,1.3 -1.1,2.3 l -5.5,0 c 0,-1.2 0.4,-2.3 0.9,-3.1 z m 10.9,7.8 c -0.3,0.1 -0.7,0.2 -1.1,0.3 -0.4,0.1 -0.8,0.1 -1.3,0.2 -0.4,0.1 -0.9,0.1 -1.3,0.2 -0.4,0.1 -0.8,0.2 -1.2,0.3 -0.4,0.1 -0.8,0.3 -1,0.5 -0.3,0.2 -0.5,0.5 -0.7,0.8 C 74,21.1 74,21.5 74,22 c 0,0.5 0.1,0.9 0.3,1.2 0.2,0.3 0.4,0.6 0.7,0.8 0.3,0.2 0.7,0.3 1.1,0.4 0.4,0.1 0.8,0.1 1.3,0.1 1.1,0 1.9,-0.2 2.5,-0.5 0.6,-0.4 1,-0.8 1.3,-1.3 0.3,-0.5 0.5,-1 0.5,-1.5 0.1,-0.5 0.1,-0.9 0.1,-1.2 l 0,-2.1 c -0.3,0.2 -0.6,0.4 -0.9,0.5 z" /><path style={this.state.contactStyle} d="m 95.6,7.5999996 0,2.8000004 0.1,0 c 0.7,-1.2000004 1.6,-2.0000004 2.7,-2.5000004 1.1,-0.5 2.3,-0.8 3.4,-0.8 1.5,0 2.7,0.2 3.6,0.6 1,0.4 1.7,1 2.2,1.7 C 108.1,10.1 108.5,11 108.8,12 c 0.2,1 0.3,2.1 0.3,3.4 l 0,12.3 -5.5,0 0,-11.3 c 0,-1.7 -0.3,-2.9 -0.8,-3.7 -0.5,-0.8 -1.4,-1.3 -2.8,-1.3 -1.5,0 -2.6,0.6 -3.3,1.5 -0.7,0.9 -1,2.4 -1,4.4 l 0,10.5 -5.5,0 0,-20.2000004 5.4,0 z" /><path style={this.state.contactStyle} d="m 121.4,11.2 c -0.9,0 -1.6,0.2 -2.2,0.6 -0.6,0.4 -1.1,0.9 -1.5,1.6 -0.4,0.6 -0.6,1.3 -0.8,2.1 -0.2,0.8 -0.2,1.5 -0.2,2.3 0,0.7 0.1,1.5 0.2,2.2 0.2,0.8 0.4,1.4 0.8,2 0.4,0.6 0.8,1.1 1.4,1.5 0.6,0.4 1.3,0.6 2.2,0.6 1.3,0 2.3,-0.4 3.1,-1.1 0.7,-0.7 1.2,-1.7 1.3,-3 l 5.3,0 c -0.4,2.7 -1.4,4.7 -3.1,6.1 -1.7,1.4 -3.9,2.1 -6.6,2.1 -1.5,0 -2.9,-0.3 -4.1,-0.8 -1.3,-0.5 -2.3,-1.2 -3.2,-2.1 -0.9,-0.9 -1.6,-2 -2.1,-3.2 -0.5,-1.3 -0.7,-2.6 -0.7,-4.1 0,-1.6 0.2,-3 0.7,-4.3 0.5,-1.3 1.1,-2.5 2,-3.5 0.9,-1.0000004 2,-1.7000004 3.2,-2.3000004 1.3,-0.5 2.7,-0.8 4.3,-0.8 1.2,0 2.3,0.2 3.4,0.5 1.1,0.3 2.1,0.8 2.9,1.4 0.9,0.6 1.6,1.4000004 2.1,2.4000004 0.5,0.9 0.8,2.1 0.9,3.4 l -5.4,0 c -0.2,-2.4 -1.5,-3.6 -3.9,-3.6 z" /><rect id="rect24" height="2.7" width="11.2" y="1.8999996" x="29.4" /><path style={this.state.contactStyle} d="m 139.3,22.9 c 0.8,0.8 2.1,1.2 3.6,1.2 1.1,0 2.1,-0.3 2.9,-0.8 0.8,-0.6 1.3,-1.2 1.5,-1.8 l 4.8,0 c -0.8,2.4 -2,4.1 -3.6,5.2 -1.6,1 -3.5,1.6 -5.8,1.6 -1.6,0 -3,-0.3 -4.3,-0.8 -1.3,-0.5 -2.3,-1.2 -3.2,-2.2 -0.9,-0.9 -1.6,-2 -2,-3.3 -0.5,-1.3 -0.7,-2.7 -0.7,-4.3 0,-1.5 0.2,-2.9 0.7,-4.2 0.5,-1.3 1.2,-2.4 2.1,-3.4 0.9,-0.9000004 2,-1.7000004 3.2,-2.2000004 1.3,-0.5 2.7,-0.8 4.2,-0.8 1.7,0 3.2,0.3 4.4,1 1.3,0.7 2.3,1.5 3.1,2.7000004 0.8,1.1 1.4,2.4 1.8,3.8 0.4,1.4 0.5,2.9 0.4,4.5 l -14.5,0 c 0,1.5 0.6,3 1.4,3.8 z m 6.4,-10.5 c -0.7,-0.7 -1.8,-1.1 -3.1,-1.1 -0.9,0 -1.6,0.2 -2.2,0.5 -0.6,0.3 -1.1,0.7 -1.4,1.1 -0.3,0.4 -0.6,0.9 -0.7,1.4 -0.1,0.5 -0.2,0.9 -0.2,1.3 l 9,0 c -0.3,-1.5 -0.8,-2.5 -1.4,-3.2 z" /></svg>),
+        svg: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 28.299998"><defs id="defs30" /><path style={this.state.contactStyle} d="m 13.1,-3.8146973e-7 c 1.3,0 2.5,0.10000000146973 3.6,0.40000000146973 1.1,0.2 2,0.6 2.8,1.09999998 0.8,0.5 1.4,1.2 1.8,2.1 0.4,0.9 0.6,2 0.6,3.2 0,1.4 -0.3,2.6 -1,3.5000004 -0.6,0.9 -1.6,1.7 -2.8,2.3 1.7,0.5 3,1.4 3.8,2.6 0.8,1.2 1.3,2.7 1.3,4.4 0,1.4 -0.3,2.6 -0.8,3.6 -0.5,1 -1.3,1.9 -2.2,2.5 -0.9,0.6 -2,1.1 -3.2,1.4 -1.2,0.3 -2.4,0.5 -3.6,0.5 L 0,27.6 0,-3.8146973e-7 l 13.1,0 z M 12.3,11.2 c 1.1,0 2,-0.3 2.7,-0.8 0.7,-0.5000004 1,-1.4000004 1,-2.5000004 0,-0.6 -0.1,-1.2 -0.3,-1.6 -0.2,-0.4 -0.5,-0.7 -0.9,-1 -0.4,-0.2 -0.8,-0.4 -1.3,-0.5 -0.5,-0.1 -1,-0.1 -1.6,-0.1 l -5.8,0 0,6.5000004 6.2,0 z M 12.6,23 c 0.6,0 1.2,-0.1 1.7,-0.2 0.5,-0.1 1,-0.3 1.4,-0.6 0.4,-0.3 0.7,-0.6 1,-1.1 0.2,-0.5 0.4,-1.1 0.4,-1.8 0,-1.4 -0.4,-2.4 -1.2,-3.1 -0.8,-0.6 -1.9,-0.9 -3.2,-0.9 l -6.6,0 0,7.7 6.5,0 z" /><path style={this.state.contactStyle} d="m 31.9,22.9 c 0.8,0.8 2,1.2 3.6,1.2 1.1,0 2.1,-0.3 2.9,-0.8 0.8,-0.6 1.3,-1.2 1.5,-1.8 l 4.9,0 c -0.8,2.4 -2,4.1 -3.6,5.2 -1.6,1 -3.5,1.6 -5.8,1.6 -1.6,0 -3,-0.3 -4.3,-0.8 -1.3,-0.5 -2.3,-1.2 -3.2,-2.2 -0.9,-0.9 -1.6,-2 -2,-3.3 -0.5,-1.3 -0.7,-2.7 -0.7,-4.3 0,-1.5 0.2,-2.9 0.7,-4.2 0.5,-1.3 1.2,-2.4 2.1,-3.4 0.9,-0.9000004 2,-1.7000004 3.2,-2.2000004 1.3,-0.5 2.6,-0.8 4.2,-0.8 1.7,0 3.2,0.3 4.5,1 1.3,0.7 2.3,1.5 3.1,2.7000004 0.8,1.1 1.4,2.4 1.8,3.8 0.2,1.4 0.3,2.8 0.2,4.4 l -14.5,0 c 0,1.6 0.6,3.1 1.4,3.9 z m 6.3,-10.5 c -0.7,-0.7 -1.8,-1.1 -3.1,-1.1 -0.9,0 -1.6,0.2 -2.2,0.5 -0.6,0.3 -1,0.7 -1.4,1.1 -0.4,0.4 -0.6,0.9 -0.7,1.4 -0.1,0.5 -0.2,0.9 -0.2,1.3 l 9,0 c -0.2,-1.5 -0.7,-2.5 -1.4,-3.2 z" /><rect style={this.state.contactStyle} height="2.7" width="11.2" y="1.8999996" x="29.4" /></svg>),
         url: 'https://www.behance.net/maruthip25'
       }
     ];
+
+    //first page
+    const LaunchDiv = (
+      <div style={{height: '100%'}}>
+      <Waypoint onEnter={this.launchTop} topOffset="-10%"></Waypoint>
+        <div id="home" className="launch-div slide">
+          <div className="launch-row">
+            <div className="launch-img">
+              <img src="build/images/bg1.jpg" />
+            </div>
+            <div className="launch-text">
+              <h2> Hello! I'm Maruthi </h2>
+              <h1> I'm a <span className="highlight">Web Designer</span> from Hyderabad.</h1>
+              <h2> I'm also a Graphic Designer, a UI Designer, a Music Addict and an Idiot.</h2>
+            </div>
+          </div>
+        </div>
+        <Waypoint onLeave={this.launchBottom} topOffset="5%"></Waypoint>
+      </div>
+    );
+
+    //second page
+    const AboutDiv = (
+      <div style={{height: '100%'}}>
+        <Waypoint onLeave={this.aboutTop} bottomOffset="95%"></Waypoint>
+        <div id="about" className="about-div slide">
+          Hello Maruthi
+        </div>
+        <Waypoint onLeave={this.aboutBottom} topOffset="5%"></Waypoint>
+      </div>
+    );
+
+    //third page
+    const WorksDiv = (
+      <div style={{height: '100%'}}>
+      <Waypoint onLeave={this.worksTop} bottomOffset="95%"></Waypoint>
+        <div id="works" className="works-div slide">
+          Hello Maruthi
+
+        </div>
+      </div>
+    );
+
     return (
       <Background wrapperStyle={this.state.wrapperStyle} contentStyle={this.state.contentStyle}>
         <Menu items={navItems} styleDefs={this.state.menuStyles}/>
-        {this.props.children}
-        <Contact items={contItems} colorStyle={this.state.contactStyle}/>
+        <Contact items={contItems}/>
+        {LaunchDiv}
+        {AboutDiv}
+        {WorksDiv}
       </Background>
     );
   }
 }
 
-const LaunchDiv = (
-  <div className="launch-div">
-    <div className="launch-row">
-      <div className="launch-img">
-        <img src="build/images/bg1.jpg" />
-      </div>
-      <div className="launch-text">
-        <h2> Hello! I'm Maruthi </h2>
-        <h1> I'm a <span className="highlight">Web Designer</span> from Hyderabad.</h1>
-        <h2> I'm also a Graphic Designer, a UI Designer, a Music Addict and an Idiot.</h2>
-      </div>
-    </div>
-  </div>
-);
-
 ReactDOM.render(
-  <Main>
-  {LaunchDiv}
-  </Main>,
+  <Main />,
   $('.view')[0]
 );

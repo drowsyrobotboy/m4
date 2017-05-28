@@ -12,6 +12,12 @@ class Menu extends React.Component {
     };
     this.toggleBurger = this.toggleBurger.bind(this); // binds the function to the component on initiation =>> allows to use state
   };
+  //this will update the state when props change
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      burgerStyle: nextProps.styleDefs.burgerDefStyle
+    });
+  }
   toggleBurger(){
     if(!this.state.open){
       this.setState({
