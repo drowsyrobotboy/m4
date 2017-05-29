@@ -192,8 +192,7 @@ class Main extends React.Component {
       <div style={{height: '100%'}}>
       <Waypoint onLeave={this.worksTop} bottomOffset="95%"></Waypoint>
         <div id="works" className="works-div slide">
-          My Works
-
+          <h1>My Works</h1>
         </div>
       </div>
     );

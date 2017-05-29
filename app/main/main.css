@@ -34,6 +34,8 @@ a{
   display: table;
   color: #37383A;
   border-collapse:collapse;
+  position: relative;
+  z-index: 91;
 }
 .launch-row{
   display: table-row;
@@ -79,6 +81,7 @@ a{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ceb640', endColorstr='#76aeae',GradientType=1 );
   overflow: hidden;
   padding: 6vmin;
+  z-index: 92;
 }
 /* for paint effect
 .about-div::before{
@@ -115,8 +118,18 @@ a{
   position: relative;
   top:0;
   background: #F3F3F3;
-  color: #37383A;
+  color: #AE3445;
   height: 100%;
+  z-index: 91;
+}
+.works-div h1{
+  position: absolute;
+  font-weight: 400;
+  font-size: 20vmax;
+  top: -6vmax;
+  left: -6vmax;
+  padding: 0;
+  line-height: 20vmax;
 }
 
 /*== Mobile css == all sizes in px ==*/
@@ -148,7 +161,7 @@ a{
     position: relative;
     width: 100%;
     padding: 20px;
-    z-index: 92;
+    z-index: 94;
     text-align: center;
   }
   .launch-text h1{
@@ -157,11 +170,12 @@ a{
   .launch-text h2{
     font-size: 1.2em;
   }
-  .about-div h1{
-    font-size: 15vmax;
+  .about-div h1,
+  .works-div h1{
+    font-size: 13.5vmax;
     top: -4vmax;
     left: -4vmax;
-    line-height: 15vmax;
+    line-height: 13.5vmax;
   }
   .about-div div.paras{
     margin: 10vmax auto 5vmax;
@@ -183,6 +197,13 @@ a{
   }
   .launch-text h2{
     font-size: 1em;
+  }
+  .about-div h1,
+  .works-div h1{
+    font-size: 12vmax;
+    top: -3vmax;
+    left: -3vmax;
+    line-height: 12vmax;
   }
   .about-div p{
     font-size: .9em;
