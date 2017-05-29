@@ -1,9 +1,9 @@
 .nav{
   position: fixed;
-  width: calc(100vw - 12vmin); /* won't work on old chrome */
-  height: 0;
-  left: 6vmin;
-  top: 6vmin;
+  width: 0;
+  height: 100vh;
+  right: 6vmin;
+  top: 0;
   text-align: center;
   -webkit-transition: .5s all ease-in-out;
   -o-transition: .5s all ease-in-out;
@@ -14,10 +14,8 @@
 }
 .nav.open{
   opacity:1;
-  left: 0;
-  top: 0;
+  right: 0;
   width: 100vw;
-  height: 100vh; /* won't work on old chrome */
 }
 
 .nav ul{
