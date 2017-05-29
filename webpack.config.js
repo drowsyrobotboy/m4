@@ -28,7 +28,14 @@ module.exports = {
             options: { minimize: true }
           }
         })
-	    }
+	    },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 30000
+        }
+      }
     ]
   },
   plugins: [

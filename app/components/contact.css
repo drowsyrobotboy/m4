@@ -33,10 +33,10 @@
   transition: all .3s ease-in-out;
 }
 /*== Mobile css == all sizes in px ==*/
-@media screen and (max-width: 900px), screen and (max-device-width: 900px) {
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
   .contacts{
     bottom: 15vmin;
-    z-index: 99;
+    z-index: 97;
   }
   .contacts ul li a{
     margin: 0 15px;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i'); */
 
 *{
   box-sizing: border-box;
@@ -71,11 +71,22 @@ a{
   padding: 0.5vmax 1vmax;
 }
 .about-div{
+  position:relative;
   background: #ceb640;
   background: -webkit-linear-gradient(bottom left, #ceb640 0%, #76aeae 100%);
   background: -o-linear-gradient(bottom left, #ceb640 0%, #76aeae 100%);
   background: linear-gradient(to top right, #ceb640 0%, #76aeae 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ceb640', endColorstr='#76aeae',GradientType=1 );
+  overflow: hidden;
+}
+.about-div h1{
+  position: absolute;
+  font-weight: 400;
+  font-size: 12vmax;
+  bottom: -2vmax;
+  right: -2vmax;
+  padding: 0;
+  line-height: 10vmax;
 }
 .works-div{
   background: #F3F3F3;
@@ -83,8 +94,15 @@ a{
 }
 
 /*== Mobile css == all sizes in px ==*/
-@media screen and (max-width: 900px), screen and (max-device-width: 900px) {
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
+  .launch-div{
+    background: #F3F3F3 url('bg1-mobile.jpg') no-repeat;
+    background-size: cover;
+  }
   .launch-img{
+    display: none;
+  }
+  /*.launch-img{
     display: block;
     position: absolute;
     bottom: 0;
@@ -99,15 +117,13 @@ a{
     width: auto;
     -webkit-filter: blur(5px);
     filter: blur(5px);
-  }
+  }*/
   .launch-text{
     position: relative;
     width: 100%;
     padding: 20px;
     z-index: 92;
     text-align: center;
-    vertical-align: top;
-    padding-top: 30vh;
   }
   .launch-text h1{
     font-size: 2em;
@@ -117,6 +133,10 @@ a{
   }
 }
 @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
+  .launch-text{
+    vertical-align: top;
+    padding-top: 30vh;
+  }
   .launch-text h1{
     font-size: 1.6em;
   }

@@ -7,6 +7,7 @@ class Background extends React.Component {
   constructor(props){
     super(props);
   };
+  //ref is is passed to a prop which will be accessed by main class
   render(){
     return(
       <div className="wrapper" style={this.props.wrapperStyle}>

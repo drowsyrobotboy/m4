@@ -61,13 +61,20 @@ class Main extends React.Component {
     if(location.hash){
       location.hash="";
     }
+    window.addEventListener("resize", this.updateWayParent.bind(this));
+    //this.updateWayParent(); // run on mount too
+  };
+  componentWillUnmount() {
+   window.removeEventListener("resize", this.updateWayParent.bind(this));
+  };
+  updateWayParent(){
+
   };
   launchTop(props){
     setTimeout(()=>{
       console.log("entered launchTop", props);
       if(props.currentPosition=="inside"){
         if(this.state.currentPage!='launch'){
-          console.log("run!");
           this.setState(launchColor);
         }
       }
@@ -77,7 +84,6 @@ class Main extends React.Component {
     console.log("entered aboutTop", props);
     if(props.currentPosition=="below"){
       if(this.state.currentPage!='launch'){
-        console.log("run!");
         this.setState(launchColor);
       }
     }
@@ -86,7 +92,6 @@ class Main extends React.Component {
     console.log("entered lauchBottom", props);
     if(props.currentPosition=="above"){
       if(this.state.currentPage!='about'){
-        console.log("run!");
         this.setState(aboutColor);
       }
     }
@@ -95,13 +100,11 @@ class Main extends React.Component {
     console.log("entered aboutBottom", props);
     if(props.currentPosition=="above"){
       if(this.state.currentPage!='works'){
-        console.log("run!");
         this.setState(worksColor);
       }
     }
     else if(props.currentPosition=="below"){
       if(this.state.currentPage!='about'){
-        console.log("run!");
         this.setState(aboutColor);
       }
     }
@@ -110,7 +113,6 @@ class Main extends React.Component {
     console.log("entered worksTop", props);
     if(props.currentPosition=="below"){
       if(this.state.currentPage!='about'){
-        console.log("run!");
         this.setState(aboutColor);
       }
     }
@@ -153,6 +155,7 @@ class Main extends React.Component {
     ];
 
     //first page
+    // as thsi si technically still not compiled and we are still in top layer, this.props.child should have content class's node
     const LaunchDiv = (
       <div style={{height: '100%'}}>
       <Waypoint onEnter={this.launchTop} topOffset="-10%"></Waypoint>
@@ -164,7 +167,7 @@ class Main extends React.Component {
             <div className="launch-text">
               <h2> Hello! I'm Maruthi </h2>
               <h1> I'm a <span className="highlight">Web Designer</span> from Hyderabad.</h1>
-              <h2> I'm also a Graphic Designer, a UI Designer, a Music Addict and an Idiot.</h2>
+              <h2> Also a Graphic Designer, a UI Designer, a Music Addict and an Idiot.</h2>
             </div>
           </div>
         </div>
@@ -177,7 +180,7 @@ class Main extends React.Component {
       <div style={{height: '100%'}}>
         <Waypoint onLeave={this.aboutTop} bottomOffset="95%"></Waypoint>
         <div id="about" className="about-div slide">
-          Hello Maruthi
+          <h1>About Me</h1>
         </div>
         <Waypoint onLeave={this.aboutBottom} topOffset="5%"></Waypoint>
       </div>

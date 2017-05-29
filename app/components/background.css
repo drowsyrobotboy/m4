@@ -20,10 +20,9 @@
   height: 100%;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
-  overflow-x: hidden;
   overflow-y: auto;
 }
-@media screen and (max-width: 900px), screen and (max-device-width: 900px) {
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
   .wrapper{
     padding: 0;
   }
