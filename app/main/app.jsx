@@ -13,7 +13,7 @@ const worksColor = {
   menuStyles: {
     burgerDefStyle: {background: '#AE3445'},
     burgerOpenStyle: {background: '#F3F3F3'},
-    menuBgStyle: {background: 'rgba(0,0,0,.95)'}
+    menuBgStyle: {background: '#F3F3F3'}
   }
 };
 
@@ -23,7 +23,7 @@ const aboutColor = {
   menuStyles: {
     burgerDefStyle: {background: '#F3F3F3'},
     burgerOpenStyle: {background: '#F3F3F3'},
-    menuBgStyle: {background: 'rgba(0,0,0,.95)'}
+    menuBgStyle: {background: '#F3F3F3'}
   }
 };
 
@@ -33,7 +33,7 @@ const launchColor = {
   menuStyles: {
     burgerDefStyle: {background: '#37383A'},
     burgerOpenStyle: {background: '#F3F3F3'},
-    menuBgStyle: {background: 'rgba(0,0,0,.95)'}
+    menuBgStyle: {background: '#37383A'}
   }
 };
 
@@ -48,7 +48,7 @@ class Main extends React.Component {
       menuStyles: {
         burgerDefStyle: {background: '#37383A'},
         burgerOpenStyle: {background: '#F3F3F3'},
-        menuBgStyle: {background: 'rgba(0,0,0,0.95)' },
+        menuBgStyle: {background: '#37383A'},
       }
     };
     this.launchTop = this.launchTop.bind(this); // binds the function to the component on initiation
