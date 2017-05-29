@@ -72,16 +72,16 @@
   border-right: 0.2vmax solid transparent;
 }
 .nav ul li a:hover::before {
-  transition: .1s transform linear, .1s height linear .1s;
-  -webkit-transition: .1s transform linear, .1s height linear .1s;
+  transition: .2s transform linear, .2s height linear .2s;
+  -webkit-transition: .2s transform linear, .2s height linear .2s;
   transform: translateX(0);
   -webkit-transform: translateX(0);
   height: 100%;
   border-color: rgba(243, 243, 243, 0.9);
 }
 .nav ul li a:hover::after {
-  transition: .1s transform linear .2s, .1s height linear .3s;
-  -webkit-transition: .1s transform linear .2s, .1s height linear .3s;
+  transition: .2s transform linear .4s, .2s height linear .6s;
+  -webkit-transition: .2s transform linear .4s, .2s height linear .6s;
   transform: translateX(0);
   -webkit-transform: translateX(0);
   height: 100%;
