@@ -80,14 +80,25 @@ a{
   overflow: hidden;
   padding: 6vmin;
 }
+/* for paint effect
+.about-div::before{
+  position: absolute;
+  top:-1vmin;
+  left:0;
+  width: 100%;
+  height: 12vmax;
+  content: '';
+  background: url(overlay.png);
+  background-size: contain;
+}*/
 .about-div h1{
   position: absolute;
   font-weight: 400;
-  font-size: 14vmax;
-  top: -4vmax;
-  left: -4vmax;
+  font-size: 20vmax;
+  top: -6vmax;
+  left: -6vmax;
   padding: 0;
-  line-height: 14vmax;
+  line-height: 20vmax;
   opacity: .6;
 }
 .about-div div.paras{
@@ -147,11 +158,10 @@ a{
     font-size: 1.2em;
   }
   .about-div h1{
-    font-size: 12vmax;
-    top: -2vmax;
-    left: -2vmax;
-    padding: 0;
-    line-height: 12vmax;
+    font-size: 15vmax;
+    top: -4vmax;
+    left: -4vmax;
+    line-height: 15vmax;
   }
   .about-div div.paras{
     margin: 10vmax auto 5vmax;
