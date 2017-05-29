@@ -8,27 +8,18 @@ class Menu extends React.Component {
     super(props);
     this.state = {
       open : false,
-      burgerStyle: this.props.styleDefs.burgerDefStyle // initializing to set the value passed from caller
     };
     this.toggleBurger = this.toggleBurger.bind(this); // binds the function to the component on initiation =>> allows to use state
   };
-  //this will update the state when props change
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      burgerStyle: nextProps.styleDefs.burgerDefStyle
-    });
-  }
   toggleBurger(){
     if(!this.state.open){
       this.setState({
         open : true,
-        burgerStyle: this.props.styleDefs.burgerOpenStyle
       });
     }
     else{
       this.setState({
         open : false,
-        burgerStyle: this.props.styleDefs.burgerDefStyle
       });
     }
   };
@@ -36,24 +27,52 @@ class Menu extends React.Component {
     this.toggleBurger();
   }
   render(){
+    // to be able to use "this"
     const menuItems = this.props.items.map((item)=>
         <li key={item.id}>
+          <div className="before-a"></div>
           <a href={item.url} onClick={this.hideMenu.bind(this)}>{item.text}</a>
+          <div className="after-a"></div>
         </li>
     );
+    //ES6 template string
+    const internalCss = `
+      .nav{
+        background: rgb(${this.props.styleDefs.primaryRGB})
+      }
+      .nav ul li a{
+        color: rgb(${this.props.styleDefs.secondaryRGB});
+        border-color: rgba(${this.props.styleDefs.secondaryRGB},0.2)
+      }
+      .nav ul li a:hover::before {
+        border-color: rgba(${this.props.styleDefs.secondaryRGB},0.9)
+      }
+      .nav ul li a:hover::after {
+        border-color: rgba(${this.props.styleDefs.secondaryRGB},0.9)
+      }
+      .burger span {
+        background: rgb(${this.props.styleDefs.primaryRGB})
+      }
+      .burger.open span{
+        background: rgb(${this.props.styleDefs.secondaryRGB})
+      }
+      `;
     return(
       <div className="menu">
         <div className={this.state.open? 'burger open': 'burger'} onClick={this.toggleBurger}>
-          <span style={this.state.burgerStyle}></span>
-          <span style={this.state.burgerStyle}></span>
-          <span style={this.state.burgerStyle}></span>
-          <span style={this.state.burgerStyle}></span>
-          <span style={this.state.burgerStyle}></span>
-          <span style={this.state.burgerStyle}></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div className={this.state.open? 'nav open': 'nav'} style={this.props.styleDefs.menuBgStyle}>
           <ul>{menuItems}</ul>
         </div>
+        <style>
+          {internalCss}
+        </style>
       </div>
     );
   }

@@ -11,9 +11,8 @@ const worksColor = {
   currentPage: 'works',
   wrapperStyle: {background: '#F3F3F3'},
   menuStyles: {
-    burgerDefStyle: {background: '#AE3445'},
-    burgerOpenStyle: {background: '#F3F3F3'},
-    menuBgStyle: {background: '#F3F3F3'}
+    primaryRGB: '174,52,69',
+    secondaryRGB:'243,243,243'
   }
 };
 
@@ -21,9 +20,8 @@ const aboutColor = {
   currentPage: 'about',
   wrapperStyle: {background: '#F3F3F3'},
   menuStyles: {
-    burgerDefStyle: {background: '#F3F3F3'},
-    burgerOpenStyle: {background: '#F3F3F3'},
-    menuBgStyle: {background: '#F3F3F3'}
+    primaryRGB: '243,243,243',
+    secondaryRGB:'55,56,58'
   }
 };
 
@@ -31,9 +29,8 @@ const launchColor = {
   currentPage: 'launch',
   wrapperStyle: {background: '#37383A'},
   menuStyles: {
-    burgerDefStyle: {background: '#37383A'},
-    burgerOpenStyle: {background: '#F3F3F3'},
-    menuBgStyle: {background: '#37383A'}
+    primaryRGB: '55,56,58',
+    secondaryRGB:'243,243,243'
   }
 };
 
@@ -46,9 +43,8 @@ class Main extends React.Component {
       wrapperStyle: {background: '#37383A'},
       contentStyle: {backgroundColor: '#F3F3F3'},
       menuStyles: {
-        burgerDefStyle: {background: '#37383A'},
-        burgerOpenStyle: {background: '#F3F3F3'},
-        menuBgStyle: {background: '#37383A'},
+        primaryRGB: '55,56,58',
+        secondaryRGB:'243,243,243'
       }
     };
     this.launchTop = this.launchTop.bind(this); // binds the function to the component on initiation
