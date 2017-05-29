@@ -9,7 +9,7 @@ import Contact from '../components/contact.jsx'
 
 const worksColor = {
   currentPage: 'works',
-  wrapperStyle: {background: '#AE3445'},
+  wrapperStyle: {background: '#F3F3F3'},
   menuStyles: {
     burgerDefStyle: {background: '#AE3445'},
     burgerOpenStyle: {background: '#F3F3F3'},

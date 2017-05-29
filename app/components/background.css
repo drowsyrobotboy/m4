@@ -27,8 +27,11 @@
   .wrapper{
     padding: 0;
   }
+  .inner-wrapper{
+    overflow: visible;
+  }
   .content{
     width: 100%;
-    box-shadow: none;
+    overflow: visible;
   }
 }
