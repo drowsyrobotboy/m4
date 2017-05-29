@@ -173,10 +173,15 @@ class Main extends React.Component {
 
     //second page
     const AboutDiv = (
-      <div style={{height: '100%'}}>
+      <div>
         <Waypoint onLeave={this.aboutTop} bottomOffset="95%"></Waypoint>
         <div id="about" className="about-div slide">
           <h1>About Me</h1>
+          <div className="paras">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam vehicula lorem quis sagittis. Sed id metus lacus. Nam quis lacus sed metus cursus varius eget ut turpis. Vivamus lacinia tempus massa, et elementum nisi. Donec interdum tempus elit, et ultricies lacus aliquet sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent pellentesque felis et diam suscipit, vel elementum orci venenatis.</p>
+
+          <p>Morbi nibh elit, sollicitudin et nunc ut, consectetur gravida justo. Nullam nec metus lobortis, semper ligula ut, vestibulum elit. Aliquam elementum quam quis odio imperdiet porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a tellus est. Donec magna tellus, tristique et tempor at, dapibus at turpis. Pellentesque convallis facilisis neque eu sagittis. Sed et metus dictum, iaculis eros bibendum, pellentesque metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dignissim lectus. Proin et viverra felis. Nunc feugiat quam sed nibh cursus bibendum.</p>
+          </div>
         </div>
         <Waypoint onLeave={this.aboutBottom} topOffset="5%"></Waypoint>
       </div>

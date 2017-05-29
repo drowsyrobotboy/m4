@@ -26,11 +26,11 @@ a{
 }
 .slide{
   width: 100%;
-  min-height: 100%;
   padding-right: 20px;
 }
 .launch-div{
   height: 100%; /* for ff */
+  min-height: 100%;
   display: table;
   color: #37383A;
   border-collapse:collapse;
@@ -78,19 +78,34 @@ a{
   background: linear-gradient(to top right, #ceb640 0%, #76aeae 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ceb640', endColorstr='#76aeae',GradientType=1 );
   overflow: hidden;
+  padding: 6vmin;
 }
 .about-div h1{
   position: absolute;
   font-weight: 400;
-  font-size: 12vmax;
-  bottom: -2vmax;
-  right: -2vmax;
+  font-size: 14vmax;
+  top: -4vmax;
+  left: -4vmax;
   padding: 0;
-  line-height: 10vmax;
+  line-height: 14vmax;
+  opacity: .6;
+}
+.about-div div.paras{
+  margin: 14vmax auto 7vmax;
+}
+.about-div p{
+  width: 60%;
+  margin: auto;
+  font-size: 1.1vmax;
+  text-align: justify;
+  padding: 1.1vmax;
 }
 .works-div{
+  position: relative;
+  top:0;
   background: #F3F3F3;
   color: #37383A;
+  height: 100%;
 }
 
 /*== Mobile css == all sizes in px ==*/
@@ -131,6 +146,22 @@ a{
   .launch-text h2{
     font-size: 1.2em;
   }
+  .about-div h1{
+    font-size: 12vmax;
+    top: -2vmax;
+    left: -2vmax;
+    padding: 0;
+    line-height: 12vmax;
+  }
+  .about-div div.paras{
+    margin: 10vmax auto 5vmax;
+  }
+  .about-div p{
+    font-size: 1em;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
 }
 @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
   .launch-text{
@@ -142,5 +173,8 @@ a{
   }
   .launch-text h2{
     font-size: 1em;
+  }
+  .about-div p{
+    font-size: .9em;
   }
 }
