@@ -98,12 +98,12 @@ class Main extends React.Component {
       if(this.state.currentPage!='works'){
         this.setState(worksColor);
       }
-    }
+    }/*
     else if(props.currentPosition=="below"){
       if(this.state.currentPage!='about'){
         this.setState(aboutColor);
       }
-    }
+    }*/
   };
   worksTop(props){
     console.log("entered worksTop", props);
