@@ -107,12 +107,32 @@ a{
 .about-div div.paras{
   margin: 14vmax auto 7vmax;
 }
-.about-div p{
+.about-div a{
+  font-weight: 700;
+  color: #F3F3F3;
+  text-decoration: none;
+}
+.about-div a:hover{
+  text-decoration: underline;
+}
+.about-div h2{
+  width: 70%;
+  margin: auto;
+  font-size: 1.5vmax;
+  text-align: left;
+  padding: 1.5vmax;
+}
+.about-div p,
+.about-div ul{
   width: 60%;
   margin: auto;
   font-size: 1.1vmax;
   text-align: justify;
   padding: 1.1vmax;
+}
+.about-div p .strikeIt{
+  text-decoration: line-through;
+  font-style: italic;
 }
 .works-div{
   position: relative;
@@ -180,7 +200,13 @@ a{
   .about-div div.paras{
     margin: 10vmax auto 5vmax;
   }
-  .about-div p{
+  .about-div h2{
+    font-size: 1.5em;
+    width: 100%;
+    padding: 10px;
+  }
+  .about-div p,
+  .about-div ul{
     font-size: 1em;
     width: 100%;
     text-align: left;
@@ -205,7 +231,8 @@ a{
     left: -3vmax;
     line-height: 12vmax;
   }
-  .about-div p{
+  .about-div p,
+  .about-div ul{
     font-size: .9em;
   }
 }

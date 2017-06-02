@@ -178,9 +178,26 @@ class Main extends React.Component {
         <div id="about" className="about-div slide">
           <h1>About Me</h1>
           <div className="paras">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam vehicula lorem quis sagittis. Sed id metus lacus. Nam quis lacus sed metus cursus varius eget ut turpis. Vivamus lacinia tempus massa, et elementum nisi. Donec interdum tempus elit, et ultricies lacus aliquet sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent pellentesque felis et diam suscipit, vel elementum orci venenatis.</p>
-
-          <p>Morbi nibh elit, sollicitudin et nunc ut, consectetur gravida justo. Nullam nec metus lobortis, semper ligula ut, vestibulum elit. Aliquam elementum quam quis odio imperdiet porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a tellus est. Donec magna tellus, tristique et tempor at, dapibus at turpis. Pellentesque convallis facilisis neque eu sagittis. Sed et metus dictum, iaculis eros bibendum, pellentesque metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dignissim lectus. Proin et viverra felis. Nunc feugiat quam sed nibh cursus bibendum.</p>
+            <h2> The Who </h2>
+            <p>They call me the <a title="Linkin Park Forever" href="https://www.youtube.com/watch?v=Wbt59pmT26E" target="blank">RobotBoy</a>, or I <span className="strikeIt">make</span> plead them.</p>
+            <p>I’m a UI designer who knows how to code - so I can <i>plan</i>, <i>design</i> and <i>develop</i> smooth and responsive websites for you. I’m also a graphic designer, so I can also design logos, posters or any other branding material.</p>
+            <p>I’ve been freelancing for more than 5 years (with my awesome friends at <a title="Citrus Designs FTW" href="http://citrusdesigns.in" target="blank">Citrus Designs</a>), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.</p>
+            <h2>The How</h2>
+            <ul>
+              <li>Adobe Illustrator and Photoshop for graphic designing</li>
+              <li>Adobe XD for UI design</li>
+              <li>HTML, CSS and Javascript (+ jQuery and React) for Front-End</li>
+              <li>PHP, NodeJs (+ ExpressJS), SQL and MongoDB for Back-End</li>
+            </ul>
+            <h2>The Why</h2>
+            <p>Because I’m obsessed with Colors, Typography and the Web</p>
+            <h2>The 'Line in the Sand'</h2>
+            <p>Although I’m not a formalist, I do have few rules that I wouldn't like to break</p>
+            <ul>
+              <li>I will not make you a hamburger list icon with just two lines – <i>because it will no longer be either a list or a hamburger</i></li>
+              <li>I will not use flash – <i>because it’s dead</i></li>
+              <li>I will not charge you for a non-profit project – <i>because you are an awesome human being</i></li>
+            </ul>
           </div>
         </div>
         <Waypoint onLeave={this.aboutBottom} topOffset="5%"></Waypoint>
