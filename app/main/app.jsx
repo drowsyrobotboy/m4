@@ -179,8 +179,8 @@ class Main extends React.Component {
           <h1>About Me</h1>
           <div className="paras">
             <h2> The Who </h2>
-            <p>They call me the <a title="Linkin Park Forever" href="https://www.youtube.com/watch?v=Wbt59pmT26E" target="blank">RobotBoy</a>, or I <span className="strikeIt">make</span> plead them.</p>
-            <p>I’m a UI designer who knows how to code - so I can <i>plan</i>, <i>design</i> and <i>develop</i> smooth and responsive websites for you. I’m also a graphic designer, so I can also design logos, posters or any other branding material.</p>
+            <p>They call me the <a title="Linkin Park Forever" href="https://www.youtube.com/watch?v=Wbt59pmT26E" target="blank">RobotBoy</a>, or I <span className="strikeIt">make</span> implore them.</p>
+            <p>I’m a UI designer who knows how to code - so I can plan, design and develop smooth and responsive websites for you. I’m also a graphic designer, so I can also design logos, posters or any other branding material.</p>
             <p>I’ve been freelancing for more than 5 years (with my awesome friends at <a title="Citrus Designs FTW" href="http://citrusdesigns.in" target="blank">Citrus Designs</a>), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.</p>
             <h2>The How</h2>
             <ul>
