@@ -116,6 +116,7 @@
 .burger span:nth-child(2)::after,
 .burger span:nth-child(3)::after,
 .burger span:nth-child(4)::after{
+  position: absolute;
   content: '';
   background: none;
   height: 100%;

@@ -141,15 +141,18 @@ a{
   color: #AE3445;
   height: 100%;
   z-index: 91;
+  text-align: center;
 }
 .works-div h1{
-  position: absolute;
+  position: relative;
   font-weight: 400;
-  font-size: 20vmax;
-  top: -6vmax;
-  left: -6vmax;
+  font-size: 2.6vmax;
   padding: 0;
-  line-height: 20vmax;
+  color: #AE3445;
+  padding: 1vmax 1.5vmax;
+  display: inline-block;
+  top: 4.5vmin;
+  border-bottom: solid 1px #AE3445;
 }
 
 /*== Mobile css == all sizes in px ==*/
