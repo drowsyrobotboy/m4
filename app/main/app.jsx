@@ -215,13 +215,15 @@ class Main extends React.Component {
     );
 
     return (
-      <Background wrapperStyle={this.state.wrapperStyle} contentStyle={this.state.contentStyle}>
+      <div>
         <Menu items={navItems} styleDefs={this.state.menuStyles}/>
-        <Contact items={contItems}/>
-        {LaunchDiv}
-        {AboutDiv}
-        {WorksDiv}
-      </Background>
+        <Background wrapperStyle={this.state.wrapperStyle} contentStyle={this.state.contentStyle}>
+          <Contact items={contItems}/>
+          {LaunchDiv}
+          {AboutDiv}
+          {WorksDiv}
+        </Background>
+      </div>
     );
   }
 }
