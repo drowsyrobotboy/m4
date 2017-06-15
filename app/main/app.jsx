@@ -9,7 +9,7 @@ import Contact from '../components/contact.jsx'
 
 const worksColor = {
   currentPage: 'works',
-  wrapperStyle: {background: '#F3F3F3'},
+  wrapperStyle: {background: '#2b1f2b'},
   menuStyles: {
     primaryRGB: '174,52,69',
     secondaryRGB:'243,243,243'
@@ -209,7 +209,7 @@ class Main extends React.Component {
       <div style={{height: '100%'}}>
       <Waypoint onLeave={this.worksTop} bottomOffset="95%"></Waypoint>
         <div id="works" className="works-div slide">
-          <h1>My Works</h1>
+          <h1>My Portfolio</h1>
         </div>
       </div>
     );

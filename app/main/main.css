@@ -137,22 +137,23 @@ a{
 .works-div{
   position: relative;
   top:0;
-  background: #F3F3F3;
-  color: #AE3445;
+  background: #2b1f2b;
+  color: #F3F3F3;
   height: 100%;
   z-index: 91;
   text-align: center;
 }
 .works-div h1{
-  position: relative;
+  position: absolute;
   font-weight: 400;
   font-size: 2.6vmax;
-  padding: 0;
-  color: #AE3445;
-  padding: 1vmax 1.5vmax;
+  color: #F3F3F3;
+  padding: 5.2vmax 1.5vmax 1vmax;
   display: inline-block;
-  top: 4.5vmin;
-  border-bottom: solid 1px #AE3445;
+  top: 0;
+  left:6vmin;
+  text-align: left;
+  border-bottom: solid 1vmax #AE3445;
 }
 
 /*== Mobile css == all sizes in px ==*/
@@ -193,8 +194,7 @@ a{
   .launch-text h2{
     font-size: 1.2em;
   }
-  .about-div h1,
-  .works-div h1{
+  .about-div h1{
     font-size: 13.5vmax;
     top: -4vmax;
     left: -4vmax;
@@ -215,6 +215,15 @@ a{
     text-align: left;
     padding: 10px;
   }
+  .works-div h1{
+    display: block;
+    font-size: 1.5em;
+    color: #F3F3F3;
+    padding: 1em;
+    left:0;
+    text-align: left;
+    border-bottom: solid 10px #AE3445;
+  }
 }
 @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
   .launch-text{
@@ -227,8 +236,7 @@ a{
   .launch-text h2{
     font-size: 1em;
   }
-  .about-div h1,
-  .works-div h1{
+  .about-div h1{
     font-size: 12vmax;
     top: -3vmax;
     left: -3vmax;
