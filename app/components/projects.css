@@ -1,0 +1,50 @@
+.projects{
+  position: relative;
+}
+.project{
+  display: block;
+  width: 100%;
+  padding: 4em 0;
+  border-bottom: solid 1px rgba(0,0,0,.1);
+}
+.project-left, .project-right{
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+.project-left{
+  text-align: right;
+}
+.project-right{
+  text-align: left;
+}
+.project:nth-child(odd) .project-left{
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  text-align: left;
+}
+.project:nth-child(odd) .project-right{
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  text-align: right;
+}
+.project-mockup{
+  text-align: center;
+}
+.project-mockup img{
+  width: 75%;
+}
+.project h2{
+  display: inline-block;
+  padding: 1vmin 2vmin;
+  color: #F3F3F3;
+  border: none;
+}
+.project p{
+  padding: 2vmin 0;
+}

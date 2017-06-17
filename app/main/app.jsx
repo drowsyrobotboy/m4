@@ -6,12 +6,13 @@ import styles from './main.css'
 import Background from '../components/background.jsx'
 import Menu from '../components/menu.jsx'
 import Contact from '../components/contact.jsx'
+import Projects from '../components/projects.jsx'
 
 const worksColor = {
   currentPage: 'works',
-  wrapperStyle: {background: '#2b1f2b'},
+  wrapperStyle: {background: '#BC4958'},
   menuStyles: {
-    primaryRGB: '174,52,69',
+    primaryRGB: '188,73,88',
     secondaryRGB:'243,243,243'
   }
 };
@@ -33,6 +34,25 @@ const launchColor = {
     secondaryRGB:'243,243,243'
   }
 };
+
+const projectsArray = [
+  {
+    id: 1,
+    title: "Color Can",
+    href: "http://colorcan.in",
+    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    accent: {background: '#B53F3F'},
+    mockup: 'build/images/colorcan_mockup.png'
+  },
+  {
+    id: 0,
+    title: "Manish Maryada",
+    href: "http://manishmaryada.com",
+    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    accent: {background: '#333333'},
+    mockup: 'build/images/manish_mockup.png'
+  }
+];
 
 // main bg + wrapper container
 class Main extends React.Component {
@@ -209,7 +229,9 @@ class Main extends React.Component {
       <div style={{height: '100%'}}>
       <Waypoint onLeave={this.worksTop} bottomOffset="95%"></Waypoint>
         <div id="works" className="works-div slide">
-          <h1>My Portfolio</h1>
+          <h1>portfolio</h1>
+          <div className="proj-blank"></div>
+            <Projects items={projectsArray} />
         </div>
       </div>
     );
