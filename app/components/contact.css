@@ -14,11 +14,11 @@
 .contacts ul li a{
   position: relative;
   display: block;
-  margin: 0 0.75vmax;
+  margin: 0 0.75vw;
 }
 .contacts ul li a svg{
-  width: 2vmax;
-  height: 2vmax;
+  width: 2vw;
+  height: 2vw;
   -webkit-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
 }

@@ -60,17 +60,17 @@ a{
 }
 .launch-text h2{
   font-weight: 400;
-  font-size: 1.1vmax;  /*16px fro 1366*/
+  font-size: 1.1vw;  /*16px fro 1366*/
 }
 .launch-text h1{
   font-weight: 700;
-  font-size: 2.6vmax; /* 26px fro 1366 */
+  font-size: 2.6vw; /* 26px fro 1366 */
   margin: .5em 0px;
 }
 .launch-text h1 .highlight{
   background: #37383A;
   color: #F3F3F3;
-  padding: 0.5vmax 1vmax;
+  padding: 0.5vw 1vw;
 }
 .about-div{
   position:relative;
@@ -86,15 +86,15 @@ a{
 .about-div h1{
   position: absolute;
   font-weight: 400;
-  font-size: 20vmax;
-  top: -6vmax;
-  left: -6vmax;
+  font-size: 20vw;
+  top: -6vw;
+  left: -6vw;
   padding: 0;
-  line-height: 20vmax;
+  line-height: 20vw;
   opacity: .6;
 }
 .about-div div.paras{
-  margin: 14vmax auto 7vmax;
+  margin: 14vw auto 7vw;
 }
 .about-div a{
   font-weight: 700;
@@ -107,17 +107,17 @@ a{
 .about-div h2{
   width: 70%;
   margin: auto;
-  font-size: 1.5vmax;
+  font-size: 1.5vw;
   text-align: left;
-  padding: 1.5vmax;
+  padding: 1.5vw;
 }
 .about-div p,
 .about-div ul{
   width: 60%;
   margin: auto;
-  font-size: 1.1vmax;
+  font-size: 1.1vw;
   text-align: justify;
-  padding: 1.1vmax;
+  padding: 1.1vw;
 }
 .about-div p .strikeIt{
   text-decoration: line-through;
@@ -135,31 +135,31 @@ a{
 .works-div h1{
   position: absolute;
   font-weight: 400;
-  top: -3vmax;
-  left: -2vmax;
+  top: -3vw;
+  left: -2vw;
   padding: 0;
   color: #37383A;
   opacity: 0.8;
-  font-size: 18vmax;
-  line-height: 18vmax;
+  font-size: 18vw;
+  line-height: 18vw;
 }
 .proj-blank{
   position: relative;
   display: block;
-  height: 14vmax;
+  height: 14vw;
 }
 /*
 .works-div h1{
   position: relative;
   font-weight: 400;
-  font-size: 2.6vmax;
+  font-size: 2.6vw;
   color: #AE3445;
-  padding: 5.2vmax 1.5vmax 1vmax;
+  padding: 5.2vw 1.5vw 1vw;
   display: inline-block;
   top: 0;
   left:0;
   text-align: left;
-  border-bottom: solid 0.1vmax #AE3445;
+  border-bottom: solid 0.1vw #AE3445;
 }*/
 
 /*== Mobile css == all sizes in px ==*/
@@ -185,13 +185,13 @@ a{
     font-size: 1.2em;
   }
   .about-div h1{
-    font-size: 13.5vmax;
-    top: -4vmax;
-    left: -4vmax;
-    line-height: 13.5vmax;
+    font-size: 13.5vw;
+    top: -4vw;
+    left: -4vw;
+    line-height: 13.5vw;
   }
   .about-div div.paras{
-    margin: 10vmax auto 5vmax;
+    margin: 10vw auto 5vw;
   }
   .about-div h2{
     font-size: 1.5em;
@@ -206,10 +206,10 @@ a{
     padding: 10px;
   }
   .works-div h1{
-    font-size: 13.5vmax;
-    top: -2vmax;
-    left: -2vmax;
-    line-height: 13.5vmax;
+    font-size: 13.5vw;
+    top: -2vw;
+    left: -2vw;
+    line-height: 13.5vw;
   }
   /*.works-div h1{
     font-size: 1.5em;
@@ -229,14 +229,14 @@ a{
     font-size: 1em;
   }
   .about-div h1{
-    font-size: 12vmax;
-    top: -3vmax;
-    left: -2vmax;
-    line-height: 12vmax;
+    font-size: 12vw;
+    top: -3vw;
+    left: -2vw;
+    line-height: 12vw;
   }
   .works-div h1{
-    font-size: 12vmax;
-    line-height: 12vmax;
+    font-size: 12vw;
+    line-height: 12vw;
   }
   .about-div p,
   .about-div ul{

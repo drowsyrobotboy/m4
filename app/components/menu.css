@@ -33,7 +33,7 @@
   position: relative;
   display: inline-block;
   font-weight: 400;
-  padding: 2vmax 2vmax;
+  padding: 2vw 2vw;
   color: #F3F3F3;
   transition: 0.5s;
   -webkit-transition:0.5s;
@@ -45,7 +45,7 @@
 }
 .nav.open ul li a{
   z-index: 99;
-  font-size: 1.5vmax;
+  font-size: 1.5vw;
 }
 .nav ul li a::before {
   transform: translateX(100%);
@@ -55,9 +55,9 @@
   bottom: 0;
   left: 0;
   width: 98%;
-  height: 0.2vmax;
-  border-bottom: 0.2vmax solid transparent;
-  border-left: 0.2vmax solid transparent;
+  height: 0.2vw;
+  border-bottom: 0.2vw solid transparent;
+  border-left: 0.2vw solid transparent;
 }
 .nav ul li a::after {
   transform: translateX(-100%);
@@ -67,9 +67,9 @@
   top: 0;
   left: 0;
   width: 98%;
-  height: 0.2vmax;
-  border-top: 0.2vmax solid transparent;
-  border-right: 0.2vmax solid transparent;
+  height: 0.2vw;
+  border-top: 0.2vw solid transparent;
+  border-right: 0.2vw solid transparent;
 }
 .nav ul li a:hover::before {
   transition: .2s transform linear, .2s height linear .2s;
@@ -92,7 +92,7 @@
 .burger{
   position: fixed;
   display: block;
-  width: 2vmax;
+  width: 2vw;
   right: 11vmin;
   top: 11vmin;
   cursor: pointer;
@@ -101,7 +101,7 @@
 .burger span {
   display: block;
   position: absolute;
-  height: 0.3vmax;
+  height: 0.3vw;
   width: 50%;
   z-index: 101;
   opacity: 1;
@@ -121,7 +121,7 @@
   background: none;
   height: 100%;
   width: 100%;
-  top: 0.3vmax;
+  top: 0.3vw;
 }
 .burger span:nth-child(even) {
   right: 0;
@@ -136,11 +136,11 @@
 }
 
 .burger span:nth-child(3), .burger span:nth-child(4) {
-  top: 0.6vmax;
+  top: 0.6vw;
 }
 
 .burger span:nth-child(5), .burger span:nth-child(6) {
-  top: 1.2vmax;
+  top: 1.2vw;
 }
 
 .burger.open span:nth-child(1),.burger.open span:nth-child(6) {
@@ -154,12 +154,12 @@
 }
 
 .burger.open span:nth-child(1) {
-  left: 0.2vmax;
+  left: 0.2vw;
   top: 0;
 }
 
 .burger.open span:nth-child(2) {
-  right: 0.2vmax;
+  right: 0.2vw;
   top: 0;
 }
 
@@ -174,13 +174,13 @@
 }
 
 .burger.open span:nth-child(5) {
-  left: 0.2vmax;
-  top: 0.6vmax;
+  left: 0.2vw;
+  top: 0.6vw;
 }
 
 .burger.open span:nth-child(6) {
-  right: 0.2vmax;
-  top: 0.6vmax;
+  right: 0.2vw;
+  top: 0.6vw;
 }
 
 /*== Mobile css == all sizes in px ==*/
