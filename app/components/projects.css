@@ -44,7 +44,81 @@
   padding: 1vmin 2vmin;
   color: #F3F3F3;
   border: none;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.project h4{
+  font-weight: 700;
+  font-style: italic;
+  color: #37383a;
+  padding: 1vmin 0;
 }
 .project p{
   padding: 2vmin 0;
+}
+a.project-link{
+  padding: 1vmin 2vmin;
+  color: #F3F3F3;
+  font-size: 0.8em;
+  font-weight: 700;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.project h2:hover,
+a.project-link:hover{
+  background: #363636 !important;
+}
+/* Glyphs for techs */
+
+@font-face {
+	font-family: 'devicon';
+	src:url('fonts/devicon.eot?-hdf3wh');
+	src:url('fonts/devicon.eot?#iefix-hdf3wh') format('embedded-opentype'),
+		url('fonts/devicon.woff?-hdf3wh') format('woff'),
+		url('fonts/devicon.ttf?-hdf3wh') format('truetype'),
+		url('fonts/devicon.svg?-hdf3wh#devicon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="devicon-"], [class*=" devicon-"] {
+	font-family: 'devicon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  opacity:0.7;
+  font-size: 1.25em;
+  padding-right: .6em;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class^="devicon-"]:hover, [class*=" devicon-"]:hover{
+  opacity:1;
+  cursor: crosshair;
+}
+
+.devicon-html5-plain:before {
+	content: "\e7f7";
+}
+
+.devicon-javascript-plain:before {
+	content: "\e845";
+}
+
+.devicon-jquery-plain:before {
+	content: "\e84a";
+}
+
+.devicon-bootstrap-plain:before {
+	content: "\e62f";
+}
+.devicon-css3-plain:before {
+	content: "\e679";
+}
+.devicon-php-plain:before {
+	content: "\eb71";
 }

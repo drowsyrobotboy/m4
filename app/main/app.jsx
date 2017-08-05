@@ -37,20 +37,123 @@ const launchColor = {
 
 const projectsArray = [
   {
-    id: 1,
+    id: 0,
     title: "Color Can",
     href: "http://colorcan.in",
-    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    type: "UI/UX Design | Responsive Web Design",
+    desc: "Color Can is a Hyderabad based start-up that provides end to end project management consulting for interior designing. They wanted a simple and clear website, to showcase their services and provide estimates to intrested costumers.",
+    glyphClasses: [
+      {
+        id:0,
+        className: 'devicon-html5-plain',
+        name: 'HTML 5'
+      },
+      {
+        id:1,
+        className: 'devicon-css3-plain',
+        name: 'CSS 3'
+      },
+      {
+        id:2,
+        className: 'devicon-javascript-plain',
+        name: 'Javascript'
+      },
+      {
+        id:3,
+        className: 'devicon-bootstrap-plain',
+        name: 'Bootstrap'
+      }
+    ],
     accent: {background: '#B53F3F'},
     mockup: 'build/images/colorcan_mockup.png'
   },
   {
-    id: 0,
+    id: 1,
     title: "Manish Maryada",
     href: "http://manishmaryada.com",
+    type: "UI/UX Design | Responsive Web Design",
     desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
-    accent: {background: '#333333'},
+    glyphClasses: [
+      {
+        id:0,
+        className: 'devicon-html5-plain',
+        name: 'HTML 5'
+      },
+      {
+        id:1,
+        className: 'devicon-css3-plain',
+        name: 'CSS 3'
+      },
+      {
+        id:2,
+        className: 'devicon-javascript-plain',
+        name: 'Javascript'
+      },
+      {
+        id:3,
+        className: 'devicon-bootstrap-plain',
+        name: 'Bootstrap'
+      }
+    ],
+    accent: {background: '#D87E67'},
     mockup: 'build/images/manish_mockup.png'
+  },
+  {
+    id: 2,
+    title: "Citrus Designs",
+    href: "http://citrusdesigns.in",
+    type: "UI/UX Design | Responsive Web Design",
+    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    glyphClasses: [
+      {
+        id:0,
+        className: 'devicon-html5-plain',
+        name: 'HTML 5'
+      },
+      {
+        id:1,
+        className: 'devicon-css3-plain',
+        name: 'CSS 3'
+      },
+      {
+        id:2,
+        className: 'devicon-javascript-plain',
+        name: 'Javascript'
+      }
+    ],
+    accent: {background: '#666666'},
+    mockup: 'build/images/citrus_mockup.png'
+  },
+  {
+    id: 3,
+    title: "Sri Kusumahara Enterprises",
+    href: "http://kitchenz.co.in",
+    type: "UI/UX Design | Web Design",
+    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    glyphClasses: [
+      {
+        id:0,
+        className: 'devicon-html5-plain',
+        name: 'HTML 5'
+      },
+      {
+        id:1,
+        className: 'devicon-css3-plain',
+        name: 'CSS 3'
+      },
+      {
+        id:2,
+        className: 'devicon-javascript-plain',
+        name: 'Javascript'
+      },
+      {
+        id:3,
+        className: 'devicon-php-plain',
+        name: 'PHP'
+      }
+    ],
+    accent: {background: '#418dca'},
+    mockup: 'build/images/kitchenz_mockup.png'
   }
 ];
 
