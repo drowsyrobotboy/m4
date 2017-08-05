@@ -33,6 +33,7 @@ a{
   min-height: 100%;
   display: table;
   color: #37383A;
+  background: #F3F3F3;
   border-collapse:collapse;
   position: relative;
   z-index: 91;
@@ -82,6 +83,7 @@ a{
   overflow: hidden;
   padding: 6vmin;
   z-index: 92;
+  color: #F3F3F3;
 }
 .about-div h1{
   position: absolute;
@@ -235,8 +237,11 @@ a{
     line-height: 12vw;
   }
   .works-div h1{
-    font-size: 12vw;
-    line-height: 12vw;
+    font-size: 14.5vw;
+    line-height: 14.5vw;
+  }
+  .proj-blank{
+    height: 1vw;
   }
   .about-div p,
   .about-div ul{

@@ -19,7 +19,7 @@ export default class Projects extends React.Component{
         )
         }
         <p>{item.desc}</p>
-        <a className="project-link" style={item.accent} href={item.href} target="_blank">Visit Project</a>
+        <a className="project-link" href={item.href} target="_blank">Visit Project &nbsp; &rarr;</a>
       </div>
       <div className="project-right">
         <div className="project-mockup"><img src={item.mockup} /></div>

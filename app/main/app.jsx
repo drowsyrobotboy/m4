@@ -10,9 +10,11 @@ import Projects from '../components/projects.jsx'
 
 const worksColor = {
   currentPage: 'works',
-  wrapperStyle: {background: '#BC4958'},
+  wrapperStyle: {background: '#37383A'},
+  logoStyle:{background: '#37383A', color: '#F3F3F3'},
+  logoText: 'Maruthi / Portfolio',
   menuStyles: {
-    primaryRGB: '188,73,88',
+    primaryRGB: '55,56,58',
     secondaryRGB:'243,243,243'
   }
 };
@@ -20,6 +22,8 @@ const worksColor = {
 const aboutColor = {
   currentPage: 'about',
   wrapperStyle: {background: '#F3F3F3'},
+  logoStyle:{background: '#F3F3F3', color: '#37383A'},
+  logoText: 'Maruthi / About',
   menuStyles: {
     primaryRGB: '243,243,243',
     secondaryRGB:'55,56,58'
@@ -29,6 +33,8 @@ const aboutColor = {
 const launchColor = {
   currentPage: 'launch',
   wrapperStyle: {background: '#37383A'},
+  logoStyle:{background: '#37383A', color: '#F3F3F3'},
+  logoText: 'Maruthi /',
   menuStyles: {
     primaryRGB: '55,56,58',
     secondaryRGB:'243,243,243'
@@ -164,7 +170,8 @@ class Main extends React.Component {
     this.state = {
       currentPage: 'launch',
       wrapperStyle: {background: '#37383A'},
-      contentStyle: {backgroundColor: '#F3F3F3'},
+      logoStyle:{background: '#37383A', color: '#F3F3F3'},
+      logoText: 'Maruthi /',
       menuStyles: {
         primaryRGB: '55,56,58',
         secondaryRGB:'243,243,243'
@@ -342,7 +349,7 @@ class Main extends React.Component {
     return (
       <div>
         <Menu items={navItems} styleDefs={this.state.menuStyles}/>
-        <Background wrapperStyle={this.state.wrapperStyle} contentStyle={this.state.contentStyle}>
+        <Background wrapperStyle={this.state.wrapperStyle} logoStyle={this.state.logoStyle} logoText={this.state.logoText}>
           <Contact items={contItems}/>
           {LaunchDiv}
           {AboutDiv}

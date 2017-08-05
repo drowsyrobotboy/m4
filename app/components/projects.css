@@ -4,7 +4,7 @@
 .project{
   display: block;
   width: 100%;
-  padding: 4em 0;
+  padding: 4em 2em;
   border-bottom: solid 1px rgba(0,0,0,.1);
 }
 .project-left, .project-right{
@@ -58,7 +58,7 @@
 }
 a.project-link{
   padding: 1vmin 2vmin;
-  color: #F3F3F3;
+  color: #37383a;
   font-size: 0.8em;
   font-weight: 700;
   -webkit-transition: all .3s ease-in-out;
@@ -66,8 +66,32 @@ a.project-link{
 }
 .project h2:hover,
 a.project-link:hover{
-  background: #363636 !important;
+  background: #37383a !important;
+  color: #F3F3F3;
 }
+
+/*== Mobile css == all sizes in px ==*/
+@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+  .project{
+    padding: 4em 1em;
+  }
+  .project-left, .project-right{
+    width: 100%;
+    text-align: left;
+  }
+  .project:nth-child(odd) .project-left{
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  .project:nth-child(odd) .project-right{
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    text-align: left;
+  }
+}
+
 /* Glyphs for techs */
 
 @font-face {
