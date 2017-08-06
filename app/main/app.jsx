@@ -11,7 +11,7 @@ import Projects from '../components/projects.jsx'
 const thanksColor = {
   currentPage: 'thanks',
   wrapperStyle: {background: '#F3F3F3'},
-  logoStyle:{background: '#F3F3F3', color: '#A53162'},
+  logoStyle:{background: '#F3F3F3', color: '#45c2ca'},
   logoText: 'Maruthi / Contact',
   menuStyles: {
     primaryRGB: '243,243,243',
@@ -135,6 +135,16 @@ const projectsArray = [
         id:2,
         className: 'devicon-javascript-plain',
         name: 'Javascript'
+      },
+      {
+        id:3,
+        className: 'devicon-photoshop-plain',
+        name: 'Photoshop'
+      },
+      {
+        id:4,
+        className: 'devicon-illustrator-plain',
+        name: 'Illustrator'
       }
     ],
     accent: {background: '#666666'},
@@ -166,6 +176,16 @@ const projectsArray = [
         id:3,
         className: 'devicon-php-plain',
         name: 'PHP'
+      },
+      {
+        id:4,
+        className: 'devicon-photoshop-plain',
+        name: 'Photoshop'
+      },
+      {
+        id:5,
+        className: 'devicon-illustrator-plain',
+        name: 'Illustrator'
       }
     ],
     accent: {background: '#418dca'},
@@ -390,7 +410,12 @@ class Main extends React.Component {
         <div id="thanks" className="thanks-div slide">
           <div className="thanks-row">
             <div className="thanks-text">
-              <h2>Thanks!</h2>
+              <a href="mailto:maruthi@citrusdesigns.in" className="thanks-button">Get in Touch</a>
+              <span className="thanks-follow">
+                <a href="mailto:maruthi@citrusdesigns.in">maruthi@citrusdesigns.in</a>
+                <a href="tel:+919908198201">+91 99081 98201</a>
+              </span>
+              <Contact items={contItems}/>
             </div>
           </div>
         </div>

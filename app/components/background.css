@@ -60,7 +60,7 @@
 }
 
 .content::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,.2);
+    background: rgba(0,0,0,.5);
 }
 @media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
   .wrapper{

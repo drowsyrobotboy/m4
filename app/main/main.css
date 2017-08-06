@@ -26,7 +26,6 @@ a{
 }
 .slide{
   width: 100%;
-  padding-right: 20px;
 }
 .launch-div{
   height: 100%; /* for ff */
@@ -155,20 +154,58 @@ a{
   display: table;
   width: 100%;
   height: 100%;
-  background: #942068;
-  background: -moz-linear-gradient(45deg, #942068 0%, #cd5b52 100%);
-  background: -webkit-linear-gradient(45deg, #942068 0%,#cd5b52 100%);
-  background: linear-gradient(45deg, #942068 0%,#cd5b52 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#942068', endColorstr='#cd5b52',GradientType=1 );
+  color: #F3F3F3;
+  background: #45c2ca;
+  background: -moz-linear-gradient(45deg, #45c2ca 0%, #3997da 100%);
+  background: -webkit-linear-gradient(45deg, #45c2ca 0%,#3997da 100%);
+  background: linear-gradient(45deg, #45c2ca 0%,#3997da 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45c2ca', endColorstr='#3997da',GradientType=1 );
 }
 .thanks-row{
   display: table-row;
 }
 .thanks-text{
   display: table-cell;
-  font-size: 2.6vw;
   text-align: center;
   vertical-align: middle;
+}
+a.thanks-button{
+  display: inline-block;
+  font-size: 2vw;
+  color: #F3F3F3;
+  border: solid 0.3vw #F3F3F3;
+  padding: 1vw 2vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  border-radius: 1vw;
+}
+a.thanks-button:hover{
+  background: #F3F3F3;
+  color: #45c2ca;
+}
+.thanks-follow{
+  display: block;
+  font-size: 1.2vw;
+  padding-top: 2vw;
+}
+.thanks-follow a{
+  display: block;
+  font-weight: 700;
+  color: #f3f3f3;
+  margin-bottom: .5vw;
+}
+.thanks-text .contacts{
+  position: relative;
+  bottom:0;
+  right:0;
+  padding-top: 1vw;
+}
+.thanks-text .contacts ul li a svg path,
+.thanks-text .contacts ul li a svg circle,
+.thanks-text .contacts ul li a svg rect{
+  fill: rgb(243, 243, 243);
 }
 
 /*
@@ -206,6 +243,22 @@ a{
   }
   .launch-text h2{
     font-size: 1.2em;
+  }
+  a.thanks-button{
+    font-size: 2em;
+    border: solid 3px #F3F3F3;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  .thanks-follow{
+    font-size: 1.2em;
+    padding-top: 20px;
+  }
+  .thanks-follow a{
+    margin-bottom: 5px;
+  }
+  .thanks-text .contacts{
+    padding-top: 10px;
   }
   .about-div h1{
     font-size: 13.5vw;

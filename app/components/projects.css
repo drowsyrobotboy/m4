@@ -154,3 +154,9 @@ a.project-link:hover{
 .devicon-php-plain:before {
 	content: "\eb71";
 }
+.devicon-photoshop-plain:before {
+	content: "\eb6d";
+}
+.devicon-illustrator-plain:before {
+	content: "\e7fa";
+}
