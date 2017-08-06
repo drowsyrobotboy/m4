@@ -15,11 +15,14 @@ export default class Projects extends React.Component{
         <h4>{item.type}</h4>
         {
           item.glyphClasses.map((glyph)=>
-          <i key={glyph.id} title={glyph.name} className={glyph.className}></i>
+          <div className="project-techs">
+            <i key={glyph.id} title={glyph.name} className={glyph.className}></i>
+            {glyph.name}
+          </div>
         )
         }
         <p>{item.desc}</p>
-        <a className="project-link" href={item.href} target="_blank">Visit Project &nbsp; &rarr;</a>
+        <a className="project-link" href={item.href} target="_blank">Visit Site &nbsp; &rarr;</a>
       </div>
       <div className="project-right">
         <div className="project-mockup"><img src={item.mockup} /></div>

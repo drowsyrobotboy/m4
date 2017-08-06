@@ -22,7 +22,7 @@ const worksColor = {
 const aboutColor = {
   currentPage: 'about',
   wrapperStyle: {background: '#F3F3F3'},
-  logoStyle:{background: '#F3F3F3', color: '#37383A'},
+  logoStyle:{background: '#F3F3F3', color: '#A1B278'},
   logoText: 'Maruthi / About',
   menuStyles: {
     primaryRGB: '243,243,243',
@@ -47,7 +47,7 @@ const projectsArray = [
     title: "Color Can",
     href: "http://colorcan.in",
     type: "UI/UX Design | Responsive Web Design",
-    desc: "Color Can is a Hyderabad based start-up that provides end to end project management consulting for interior designing. They wanted a simple and clear website, to showcase their services and provide estimates to intrested costumers.",
+    desc: "Color Can is a Hyderabad based start-up that provides end to end project management consulting for interior designing. They wanted a simple and clear website, to showcase their services and provide estimates to interested customers.",
     glyphClasses: [
       {
         id:0,
@@ -78,7 +78,7 @@ const projectsArray = [
     title: "Manish Maryada",
     href: "http://manishmaryada.com",
     type: "UI/UX Design | Responsive Web Design",
-    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    desc: "My friend wanted a résumé-style website to show off his professional skills. He also wanted a magazine-style cover page to show off his new suit.",
     glyphClasses: [
       {
         id:0,
@@ -109,7 +109,7 @@ const projectsArray = [
     title: "Citrus Designs",
     href: "http://citrusdesigns.in",
     type: "UI/UX Design | Responsive Web Design",
-    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    desc: "Citrus Designs is a team of freelancers, that I formed with a couple of my friends from college. The minimalistic and sharp design of the website not only spoke of our style in design, but also attracted a lot of work from clients who had a similar taste.",
     glyphClasses: [
       {
         id:0,
@@ -134,8 +134,8 @@ const projectsArray = [
     id: 3,
     title: "Sri Kusumahara Enterprises",
     href: "http://kitchenz.co.in",
-    type: "UI/UX Design | Web Design",
-    desc: "I’ve been freelancing for more than 5 years (with my awesome friends at Citrus Designs), helping out budding start-ups in building a brand and already successful brands in re-inventing their identity.",
+    type: "Logo Design | UI/UX Design | Web Design | Branding",
+    desc: "Sri Kusumahara Enterprises are premium authorized dealers of modular kitchen and hardware in Hyderabad. They are one of the earliest clients that I have worked with, completely re-branding their identity from Logo, Stationary to Website Design.",
     glyphClasses: [
       {
         id:0,
@@ -324,7 +324,7 @@ class Main extends React.Component {
             <h2>The 'Line in the Sand'</h2>
             <p>Although I’m not a formalist, I do have few rules that I wouldn't like to break</p>
             <ul>
-              <li>I will not make you a hamburger list icon with just two lines – <i>because it will no longer be either a list or a hamburger</i></li>
+              <li>I will not make you a hamburger list icon with just two lines – <i>because a list needs 3 items at least and a hamburger needs three layers</i></li>
               <li>I will not use flash – <i>because it’s dead</i></li>
               <li>I will not charge you for a non-profit project – <i>because you are an awesome human being</i></li>
             </ul>
