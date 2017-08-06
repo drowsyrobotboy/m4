@@ -150,6 +150,27 @@ a{
   display: block;
   height: 14vw;
 }
+.thanks-div{
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background: #942068;
+  background: -moz-linear-gradient(45deg, #942068 0%, #cd5b52 100%);
+  background: -webkit-linear-gradient(45deg, #942068 0%,#cd5b52 100%);
+  background: linear-gradient(45deg, #942068 0%,#cd5b52 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#942068', endColorstr='#cd5b52',GradientType=1 );
+}
+.thanks-row{
+  display: table-row;
+}
+.thanks-text{
+  display: table-cell;
+  font-size: 2.6vw;
+  text-align: center;
+  vertical-align: middle;
+}
+
 /*
 .works-div h1{
   position: relative;

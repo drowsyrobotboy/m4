@@ -8,6 +8,16 @@ import Menu from '../components/menu.jsx'
 import Contact from '../components/contact.jsx'
 import Projects from '../components/projects.jsx'
 
+const thanksColor = {
+  currentPage: 'thanks',
+  wrapperStyle: {background: '#F3F3F3'},
+  logoStyle:{background: '#F3F3F3', color: '#A53162'},
+  logoText: 'Maruthi / Contact',
+  menuStyles: {
+    primaryRGB: '243,243,243',
+    secondaryRGB:'55,56,58'
+  }
+};
 const worksColor = {
   currentPage: 'works',
   wrapperStyle: {background: '#37383A'},
@@ -108,7 +118,7 @@ const projectsArray = [
     id: 2,
     title: "Citrus Designs",
     href: "http://citrusdesigns.in",
-    type: "UI/UX Design | Responsive Web Design",
+    type: "Logo Design | UI/UX Design | Responsive Web Design | Branding",
     desc: "Citrus Designs is a team of freelancers, that I formed with a couple of my friends from college. The minimalistic and sharp design of the website not only spoke of our style in design, but also attracted a lot of work from clients who had a similar taste.",
     glyphClasses: [
       {
@@ -182,20 +192,29 @@ class Main extends React.Component {
     this.aboutTop = this.aboutTop.bind(this); // binds the function to the component on initiation
     this.aboutBottom = this.aboutBottom.bind(this); // binds the function to the component on initiation
     this.worksTop = this.worksTop.bind(this); // binds the function to the component on initiation
+    this.worksBottom = this.worksBottom.bind(this); // binds the function to the component on initiation
+    this.thanksTop = this.thanksTop.bind(this); // binds the function to the component on initiation
+  };
+  //to fix the bug when tranitioning from works cont to about via menu
+  aboutHash(){
+    if(location.hash=='#about'){
+      console.log('aboutHash');
+      setTimeout(()=>{
+        this.setState(aboutColor);
+      }, 300);
+    }
   };
   componentDidMount(){
     if(location.hash){
       location.hash="";
     }
-    window.addEventListener("resize", this.updateWayParent.bind(this));
-    //this.updateWayParent(); // run on mount too
+    window.addEventListener("hashchange", this.aboutHash.bind(this));
+    //this.aboutHash(); // run on mount too
   };
   componentWillUnmount() {
-   window.removeEventListener("resize", this.updateWayParent.bind(this));
+   window.removeEventListener("hashchange", this.aboutHash.bind(this));
   };
-  updateWayParent(){
 
-  };
   launchTop(props){
     setTimeout(()=>{
       console.log("entered launchTop", props);
@@ -243,6 +262,22 @@ class Main extends React.Component {
       }
     }
   };
+  worksBottom(props){
+    console.log("entered worksBottom", props);
+    if(props.currentPosition=="above"){
+      if(this.state.currentPage!='thanks'){
+        this.setState(thanksColor);
+      }
+    }
+  };
+  thanksTop(props){
+    console.log("entered thanksTop", props);
+    if(props.currentPosition=="below"){
+      if(this.state.currentPage!='works'){
+        this.setState(worksColor);
+      }
+    }
+  };
   render(){
     //decide styles for this render
     console.log("render!");
@@ -251,7 +286,8 @@ class Main extends React.Component {
     const navItems = [
       {id: 0, text: "go home", url: "#home"},
       {id: 1, text: "about me", url: "#about"},
-      {id: 2, text: "my works", url: "#works"}
+      {id: 2, text: "my works", url: "#works"},
+      {id: 3, text: "contact", url: "#thanks"}
     ];
     const contItems = [
       {
@@ -281,7 +317,7 @@ class Main extends React.Component {
     ];
 
     //first page
-    // as thsi si technically still not compiled and we are still in top layer, this.props.child should have content class's node
+    // as this is technically still not compiled and we are still in top layer, this.props.child should have content class's node
     const LaunchDiv = (
       <div style={{height: '100%'}}>
       <Waypoint onEnter={this.launchTop} topOffset="-10%"></Waypoint>
@@ -336,12 +372,27 @@ class Main extends React.Component {
 
     //third page
     const WorksDiv = (
-      <div style={{height: '100%'}}>
+      <div>
       <Waypoint onLeave={this.worksTop} bottomOffset="95%"></Waypoint>
         <div id="works" className="works-div slide">
-          <h1>portfolio</h1>
+          <h1>Portfolio</h1>
           <div className="proj-blank"></div>
             <Projects items={projectsArray} />
+        </div>
+      <Waypoint onLeave={this.worksBottom} topOffset="5%"></Waypoint>
+      </div>
+    );
+
+    //fourth page
+    const ThanksDiv = (
+      <div style={{height: '100%'}}>
+      <Waypoint onLeave={this.thanksTop} bottomOffset="95%"></Waypoint>
+        <div id="thanks" className="thanks-div slide">
+          <div className="thanks-row">
+            <div className="thanks-text">
+              <h2>Thanks!</h2>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -354,6 +405,7 @@ class Main extends React.Component {
           {LaunchDiv}
           {AboutDiv}
           {WorksDiv}
+          {ThanksDiv}
         </Background>
       </div>
     );

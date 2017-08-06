@@ -15,8 +15,8 @@ export default class Projects extends React.Component{
         <h4>{item.type}</h4>
         {
           item.glyphClasses.map((glyph)=>
-          <div className="project-techs">
-            <i key={glyph.id} title={glyph.name} className={glyph.className}></i>
+          <div className="project-techs" key={glyph.id}>
+            <i title={glyph.name} className={glyph.className}></i>
             {glyph.name}
           </div>
         )
